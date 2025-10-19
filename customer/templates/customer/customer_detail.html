@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>プロフィールページ</title>
+  <style>
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    /* タイトルとボタンを横並びにする */
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    /* 追加ボタン（緑） */
+    .add-btn {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 15px;
+      transition: background-color 0.2s ease;
+    }
+
+    .add-btn:hover {
+      background-color: #218838;
+    }
+
+    .info {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 250px;
+      text-align: left;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .card a {
+      font-size: 14px;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- タイトルと追加ボタン -->
+  <div class="header">
+    <h1>{{  customer.last_name }}　{{ customer.first_name  }} </h1>
+    <a href="{%  url 'customers/create' %}" class="add-btn">＋ 追加</a>
+  </div>
+
+  <div class="info">
+    生年月日: {{ customer.birth_date  }} 　　勤務先: {{  customer.position }} 　　最終学歴: {{ customer.education  }}
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <h2>出身地：{{  customer.born_place }} </h2>
+      <p>最新の関連ニュースはこちら＞＞</p>
+      <a href="#">［ニュースの見出し］</a><br>
+      <a href="#">詳細はこちら＞＞</a>
+    </div>
+
+    <div class="card">
+      <h2>趣味：{{  customer.hobby }} </h2>
+      <p>最新の関連ニュースはこちら＞＞</p>
+      <a href="#">［ニュースの見出し］</a><br>
+      <a href="#">詳細はこちら＞＞</a>
+    </div>
+
+    <div class="card">
+      <h2>仕事関連：{{  customer.job }}</h2>
+      <p>最新の関連ニュースはこちら＞＞</p>
+    </div>
+
+    <div class="card">
+      <h2>時代：</h2>
+      <p>最新の関連ニュースはこちら＞＞</p>
+    </div>
+
+    <div class="card">
+      <h2>趣味：{{  customer.hobby }}</h2>
+      <p>最新の関連ニュースはこちら＞＞</p>
+    </div>
+  </div>
+</body>
+</html>

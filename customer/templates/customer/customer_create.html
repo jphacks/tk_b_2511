@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>顧客新規登録</title>
+  <style>
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .form-card {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 600px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      font-size: 15px;
+    }
+
+    input[readonly] {
+      background-color: #eee;
+      color: #777;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 14px;
+      padding: 14px;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-card">
+    <h1>顧客情報の新規登録</h1>
+    <form>
+      <label>姓</label>
+      <input type="text" placeholder="ここに入力">
+
+      <label>名</label>
+      <input type="text" placeholder="ここに入力">
+
+      <label>メールアドレス</label>
+      <input type="email" placeholder="ここに入力">
+
+      <label>電話番号</label>
+      <input type="text" placeholder="ここに入力">
+
+      <label>生年月日（変更不可）</label>
+      <input type="date" >
+
+      <label>勤務先（変更不可）</label>
+      <input type="text"  placeholder="">
+
+      <label>最終学歴（変更不可）</label>
+      <input type="text"  placeholder="">
+
+      <label>役職</label>
+      <input type="text" placeholder="ここに入力">
+
+      <label>メモ・備考</label>
+      <textarea rows="3" placeholder="ここに入力"></textarea>
+
+      <button type="submit">💾 保存</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>顧客一覧</title>
+  <style>
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 30px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #333;
+    }
+
+    .create-btn {
+      background-color: #28a745;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+    }
+
+    .create-btn:hover {
+      background-color: #218838;
+    }
+
+    .customer-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 14px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 4px;
+    }
+
+    .view-link {
+      font-size: 14px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .view-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>顧客一覧</h1>
+    <a href="{% url 'customer_create' %}" class="create-btn">＋ 新規登録</a>
+  </header>
+
+  <div class="customer-list">
+    {% for c in customer %}
+      <div class="card">
+        <h2>{{ c.last_name }} {{ c.first_name }}</h2>
+        <p>メール: {{ c.email }}</p>
+        <p>役職: {{ c.position }}</p>
+        <a href="{%url 'customer_detail' c.id %}" class="view-link">詳細を見る ＞</a>
+      </div>
+    {% endfor %}
+</body>
+</html>
